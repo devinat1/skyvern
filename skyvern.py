@@ -63,8 +63,29 @@ def get_task_details(task):
         temperature=0
     )
 
-    content = response.choices[0].message.content
-    return content
+    try:
+        json_response = json.loads(response.choices[0].message.content)
+    except json.JSONDecodeError:
+        print("Error: Invalid JSON response")
+        cleaned_response = openai.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You are a helpful assistant to fix an invalid JSON response. You need to fix the invalid JSON response to be valid JSON. You must respond in JSON only with no other fluff or bad things will happen. Do not return the JSON inside a code block.",
+                },
+                {"role": "user", "content": f"The invalid JSON response is: {response.choices[0].message.content}"},
+            ],
+        )
+        try:
+            cleaned_json_response = json.loads(cleaned_response.choices[0].message.content)
+        except json.JSONDecodeError:
+            print("Error: Invalid JSON response")
+            return {}
+        
+        return cleaned_json_response
+    
+    return json_response
 
 # Function to send the request and get response
 def send_request(payload):
@@ -83,8 +104,7 @@ def main():
             try:
                 site, tasks = read_prompt_file(os.path.join(prompts_dir, prompt_file))
                 for task in tasks:
-                    task_details = get_task_details(task)
-                    task_json = json.loads(task_details)
+                    task_json = get_task_details(task)
                     navigation_goal = task_json.get('navigation_goal')
                     data_extraction_goal = task_json.get('data_extraction_goal')
                     navigation_payload = task_json.get('navigation_payload')
