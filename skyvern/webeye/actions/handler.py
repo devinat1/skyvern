@@ -32,6 +32,10 @@ from skyvern.webeye.actions.actions import (
 from skyvern.webeye.actions.responses import ActionFailure, ActionResult, ActionSuccess
 from skyvern.webeye.browser_factory import BrowserState
 from skyvern.webeye.scraper.scraper import ScrapedPage
+import sqlite3
+import os
+import urllib.parse
+import tldextract
 
 LOG = structlog.get_logger()
 
@@ -520,6 +524,10 @@ def get_actual_value_of_parameter_if_secret(task: Task, parameter: str) -> Any:
     return secret_value if secret_value is not None else parameter
 
 
+def extract_domain(url):
+    extracted = tldextract.extract(url)
+    return "{}.{}".format(extracted.domain, extracted.suffix)
+
 async def validate_actions_in_dom(action: WebAction, page: Page, scraped_page: ScrapedPage) -> str:
     xpath = scraped_page.id_to_xpath_dict[action.element_id]
     locator = page.locator(xpath)
@@ -538,6 +546,22 @@ async def validate_actions_in_dom(action: WebAction, page: Page, scraped_page: S
     else:
         LOG.info("Validated action xpath in DOM", action=action)
 
+    # By design, I am removing the www. and / from the name of the db
+    domain = extract_domain(scraped_page.url)
+    db_file = f'db/{domain}.db'
+
+    # Create the database file if it doesn't exist
+    if not os.path.exists(db_file):
+        conn = sqlite3.connect(db_file)
+        cursor = conn.cursor()
+        cursor.execute("CREATE TABLE elements (xpath TEXT, class_name TEXT)")
+        conn.commit()
+
+    #FIXME This is assuming that you have run the runner.py file first
+    conn = sqlite3.connect(db_file)
+    cursor = conn.cursor()
+    cursor.execute("INSERT INTO elements (xpath, class_name) VALUES (?, ?)", (xpath, None))
+    conn.commit()
     return xpath
 
 

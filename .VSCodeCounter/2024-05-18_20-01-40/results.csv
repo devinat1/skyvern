@@ -1,0 +1,240 @@
+"filename", "language", "Python", "Markdown", "Shell Script", "Ini", "Ignore", "Docker", "YAML", "MDX", "XML", "JSON", "Jinja", "JavaScript", "toml", "JSON with Comments", "HTML", "TypeScript", "TypeScript JSX", "CSS", "comment", "blank", "total"
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/.dockerignore", "Ignore", 0, 0, 0, 0, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 21
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/.flake8", "Ini", 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/.github/sync.yml", "YAML", 0, 0, 0, 0, 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/.github/workflows/build-docker-image.yml", "YAML", 0, 0, 0, 0, 0, 0, 45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 54
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/.github/workflows/ci.yml", "YAML", 0, 0, 0, 0, 0, 0, 66, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 17, 119
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/.github/workflows/inactive-issues-and-prs.yml", "YAML", 0, 0, 0, 0, 0, 0, 22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 24
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/.github/workflows/sync-skyvern-cloud.yml", "YAML", 0, 0, 0, 0, 0, 0, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 34
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/.pre-commit-config.yaml", "YAML", 0, 0, 0, 0, 0, 0, 74, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 6, 87
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/CODE_OF_CONDUCT.md", "Markdown", 0, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 34, 135
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/CONTRIBUTING.md", "Markdown", 0, 112, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 47, 184
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/Dockerfile", "Docker", 0, 0, 0, 0, 0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 35
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/README.md", "Markdown", 0, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 64, 268
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/alembic.ini", "Ini", 0, 0, 0, 92, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 25, 118
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/alembic/README.md", "Markdown", 0, 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 31
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/alembic/env.py", "Python", 47, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 23, 82
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/alembic/versions/2024_03_01_0537-99423c1dec60_create_tables.py", "Python", 270, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 10, 285
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/alembic/versions/2024_03_13_0518-82a0c686152d_add_title_error_code_mapping_and_errors_.py", "Python", 22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 10, 39
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/alembic/versions/2024_03_22_0010-ffe2f57bd288_create_output_parameter.py", "Python", 71, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 10, 86
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/alembic/versions/2024_04_03_2257-4630ab8c198e_create_bitwarden_credential_parameter_.py", "Python", 53, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 10, 68
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/alembic/versions/2024_04_08_2347-ea8e24d0bc8e_add_orgs_max_retries_per_step.py", "Python", 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 10, 31
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/alembic/versions/2024_04_09_0058-8335d7fecef9_add_new_indices_to_tasks_table.py", "Python", 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 9, 33
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/alembic/versions/2024_04_23_2153-24303f1669a7_add_domain_to_organizations_table.py", "Python", 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 10, 33
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/alembic/versions/2024_04_28_2320-68d78072fdb5_add_org_task_step_index.py", "Python", 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 9, 29
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/alembic/versions/2024_05_05_0249-c4dca14a5e69_add_org_task_index_for_steps_table.py", "Python", 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 9, 29
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/alembic/versions/2024_05_11_2104-8792454ce498_add_max_steps_per_run_to_task.py", "Python", 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 10, 31
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/alembic/versions/2024_05_14_0114-bf561125112f_add_workflow_permanent_id_and_version_.py", "Python", 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 10, 33
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/alembic/versions/2024_05_14_0245-baec12642d77_add_workflow_permanent_id_constraint_.py", "Python", 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 10, 41
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docker-compose.yml", "YAML", 0, 0, 0, 0, 0, 0, 45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 5, 65
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docs/README.md", "Markdown", 0, 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 44
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docs/api-reference/endpoint/create.mdx", "MDX", 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docs/api-reference/endpoint/delete.mdx", "MDX", 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docs/api-reference/endpoint/get.mdx", "MDX", 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docs/api-reference/introduction.mdx", "MDX", 0, 0, 0, 0, 0, 0, 0, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 34
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docs/api-reference/openapi.json", "JSON", 0, 0, 0, 0, 0, 0, 0, 0, 0, 195, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 195
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docs/development.mdx", "MDX", 0, 0, 0, 0, 0, 0, 0, 68, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 31, 99
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docs/essentials/code.mdx", "MDX", 0, 0, 0, 0, 0, 0, 0, 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 38
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docs/essentials/images.mdx", "MDX", 0, 0, 0, 0, 0, 0, 0, 41, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 60
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docs/essentials/markdown.mdx", "MDX", 0, 0, 0, 0, 0, 0, 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 89
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docs/essentials/navigation.mdx", "MDX", 0, 0, 0, 0, 0, 0, 0, 49, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 67
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docs/essentials/reusable-snippets.mdx", "MDX", 0, 0, 0, 0, 0, 0, 0, 78, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 33, 111
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docs/essentials/settings.mdx", "MDX", 0, 0, 0, 0, 0, 0, 0, 266, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 53, 319
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docs/favicon.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 0, 49, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 50
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docs/introduction.mdx", "MDX", 0, 0, 0, 0, 0, 0, 0, 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 72
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docs/logo/dark.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 0, 55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 56
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docs/logo/light.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 0, 51, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 52
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docs/mint.json", "JSON", 0, 0, 0, 0, 0, 0, 0, 0, 0, 86, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 86
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docs/quickstart.mdx", "MDX", 0, 0, 0, 0, 0, 0, 0, 70, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 87
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/docs/snippets/snippet-intro.mdx", "MDX", 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/entrypoint-skyvern.sh", "Shell Script", 0, 0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 21
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/entrypoint-streamlit.sh", "Shell Script", 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 7
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/mypy.ini", "Ini", 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 11
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/poetry.lock", "toml", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6649, 0, 0, 0, 0, 0, 0, 589, 7238
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/pyproject.toml", "toml", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 8, 108
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/run_alembic_check.sh", "Shell Script", 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 7
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/run_skyvern.sh", "Shell Script", 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 13
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/run_ui.sh", "Shell Script", 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/scripts/create_api_key.py", "Python", 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 13, 48
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/scripts/create_organization.py", "Python", 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 22
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/setup.sh", "Shell Script", 0, 0, 210, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 35, 281
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/.prettierignore", "Ignore", 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/README.md", "Markdown", 0, 43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 23, 66
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/artifactServer.js", "JavaScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 46, 0, 0, 0, 0, 0, 0, 0, 8, 54
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/components.json", "JSON", 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 18
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/index.html", "HTML", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 1, 14
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/localServer.js", "JavaScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 2, 4, 26
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/package-lock.json", "JSON", 0, 0, 0, 0, 0, 0, 0, 0, 0, 6580, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6581
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/package.json", "JSON", 0, 0, 0, 0, 0, 0, 0, 0, 0, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 88
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/postcss.config.js", "JavaScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/App.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 0, 3, 18
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/api/AxiosClient.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 42, 0, 0, 0, 10, 52
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/api/QueryClient.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 3, 12
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/api/types.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 94, 0, 0, 0, 10, 104
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/Logo.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 2, 7
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/StatusBadge.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 5, 22
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ThemeProvider.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 37, 0, 0, 9, 46
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ThemeSwitch.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 35, 0, 0, 5, 40
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ZoomableImage.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 0, 0, 4, 17
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/themeProviderContext.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 5, 17
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/accordion.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 49, 0, 0, 7, 56
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/aspect-ratio.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 3, 6
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/badge-variants.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 0, 0, 0, 3, 28
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/badge.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 0, 0, 5, 18
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/button-variants.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 31, 0, 0, 0, 3, 34
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/button.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 0, 0, 5, 29
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/card.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 75, 0, 0, 9, 84
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/carousel.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 231, 0, 0, 30, 261
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/dialog.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 108, 0, 0, 13, 121
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/dropdown-menu.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 186, 0, 0, 18, 204
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/form.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 123, 0, 0, 16, 139
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/hidden-copyable-input.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 39, 0, 0, 6, 45
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/input.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 5, 26
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/label.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 5, 25
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/pagination.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 0, 0, 11, 123
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/radio-group.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 38, 0, 0, 5, 43
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/select.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 150, 0, 0, 13, 163
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/separator.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 26, 0, 0, 4, 30
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/skeleton.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 0, 0, 3, 16
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/table.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 110, 0, 0, 11, 121
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/tabs.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 47, 0, 0, 7, 54
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/textarea.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 5, 25
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/toast.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 115, 0, 0, 13, 128
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/toaster.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 31, 0, 0, 3, 34
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/tooltip.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22, 0, 0, 7, 29
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/use-form-field.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 0, 0, 0, 11, 47
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/ui/use-toast.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 156, 0, 0, 3, 31, 190
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/useTheme.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 4, 12
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/components/useThemeAsDarkOrLight.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 0, 0, 0, 5, 16
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/hooks/useApiCredential.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 33, 0, 0, 0, 7, 40
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/hooks/useCredentialGetter.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 3, 10
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/index.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 157, 0, 23, 180
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/main.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 2, 11
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/router.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 49, 0, 0, 3, 52
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/root/Profile.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 4, 25
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/root/RootLayout.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 55, 0, 0, 4, 59
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/root/SideNav.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 56, 0, 0, 3, 59
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/settings/Settings.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 59, 0, 0, 4, 63
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/settings/SettingsPageLayout.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 0, 0, 3, 14
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/TasksPageLayout.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 0, 0, 3, 14
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/constants.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 2
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/create/CreateNewTask.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 0, 0, 4, 68
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/create/CreateNewTaskForm.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 316, 0, 0, 11, 327
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/data/descriptionHelperContent.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 6, 18
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/data/sampleTaskData.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 277, 0, 0, 0, 6, 283
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/detail/JSONArtifact.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 42, 0, 0, 6, 48
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/detail/StepArtifacts.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 165, 0, 0, 12, 177
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/detail/StepArtifactsLayout.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 49, 0, 0, 8, 57
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/detail/StepInfo.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 39, 0, 0, 4, 43
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/detail/StepNavigation.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 76, 0, 0, 8, 84
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/detail/TaskDetails.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 197, 0, 0, 6, 203
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/detail/TextArtifact.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 0, 0, 6, 46
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/detail/artifactUtils.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 0, 0, 0, 4, 32
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/list/TaskList.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 180, 0, 0, 7, 187
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/list/TaskListSkeleton.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 43, 0, 0, 4, 47
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/running/LatestScreenshot.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 68, 0, 0, 17, 85
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/running/QueuedTasks.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 74, 0, 0, 6, 80
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/running/RunningTaskSkeleton.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 80, 0, 1, 3, 84
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/running/RunningTasks.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 61, 0, 0, 6, 67
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/routes/tasks/types.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 1, 6
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/store/CredentialGetterContext.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 3, 7
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/store/SettingsStore.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0, 0, 4, 20
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/store/UserContext.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 3, 7
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/util/env.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 0, 0, 8, 23
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/util/timeFormat.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 2, 14
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/util/utils.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 2, 7
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/src/vite-env.d.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/tailwind.config.js", "JavaScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 76, 0, 0, 0, 0, 0, 0, 1, 1, 78
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/tsconfig.json", "JSON with Comments", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 26, 0, 0, 0, 0, 3, 4, 33
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/tsconfig.node.json", "JSON", 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 12
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern-frontend/vite.config.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 1, 2, 20
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/analytics.py", "Python", 51, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 17, 72
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/config.py", "Python", 67, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 20, 104
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/constants.py", "Python", 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 7
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/exceptions.py", "Python", 144, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 81, 225
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/__main__.py", "Python", 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 21
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/agent.py", "Python", 1071, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 77, 1198
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/api_app.py", "Python", 80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 24, 110
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/app.py", "Python", 42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 48
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/async_operations.py", "Python", 99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 30, 136
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/prompts.py", "Python", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 5
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/prompts/skyvern/extract-action-claude3-sonnet.j2", "Jinja", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 66, 0, 0, 0, 0, 0, 0, 0, 0, 11, 77
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/prompts/skyvern/extract-action.j2", "Jinja", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 67, 0, 0, 0, 0, 0, 0, 0, 0, 12, 79
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/prompts/skyvern/extract-information.j2", "Jinja", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 0, 0, 0, 0, 10, 27
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/api/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/api/aws.py", "Python", 113, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 25, 139
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/api/files.py", "Python", 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 16, 71
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/api/llm/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/api/llm/api_handler_factory.py", "Python", 197, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 24, 225
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/api/llm/config_registry.py", "Python", 112, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 19, 133
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/api/llm/exceptions.py", "Python", 30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 49
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/api/llm/models.py", "Python", 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 64
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/api/llm/utils.py", "Python", 54, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 68
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/artifact/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/artifact/manager.py", "Python", 85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 16, 116
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/artifact/models.py", "Python", 62, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 13, 80
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/artifact/storage/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/artifact/storage/base.py", "Python", 39, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 10, 50
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/artifact/storage/factory.py", "Python", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/artifact/storage/local.py", "Python", 56, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 70
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/core/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/core/security.py", "Python", 35, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 44
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/core/skyvern_context.py", "Python", 53, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 74
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/db/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/db/client.py", "Python", 1042, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 60, 1104
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/db/enums.py", "Python", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5, 16
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/db/exceptions.py", "Python", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/db/id.py", "Python", 102, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 49, 155
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/db/models.py", "Python", 198, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 49, 248
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/db/utils.py", "Python", 258, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 42, 300
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/executor/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/executor/async_executor.py", "Python", 85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 100
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/executor/factory.py", "Python", 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 14
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/experimentation/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/experimentation/providers.py", "Python", 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 9, 27
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/forge_log.py", "Python", 70, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 14, 91
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/models.py", "Python", 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 35, 140
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/prompting.py", "Python", 92, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 27, 120
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/routes/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/routes/agent_protocol.py", "Python", 477, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 52, 535
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/schemas/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/schemas/tasks.py", "Python", 199, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 31, 231
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/services/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/services/bitwarden.py", "Python", 94, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 25, 131
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/services/org_auth_service.py", "Python", 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 18, 120
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/services/org_auth_token_service.py", "Python", 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 9, 40
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/settings_manager.py", "Python", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 15
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/workflow/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/workflow/context_manager.py", "Python", 273, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 44, 336
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/workflow/exceptions.py", "Python", 31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 44
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/workflow/models/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/workflow/models/block.py", "Python", 765, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 118, 933
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/workflow/models/parameter.py", "Python", 83, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 31, 120
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/workflow/models/workflow.py", "Python", 74, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 99
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/workflow/models/yaml.py", "Python", 99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 46, 46, 191
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/forge/sdk/workflow/service.py", "Python", 764, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 23, 67, 854
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/scheduler.py", "Python", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/webeye/README.md", "Markdown", 0, 34, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 51
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/webeye/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/webeye/actions/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/webeye/actions/actions.py", "Python", 175, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 55, 244
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/webeye/actions/handler.py", "Python", 661, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 42, 108, 811
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/webeye/actions/models.py", "Python", 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 17, 69
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/webeye/actions/responses.py", "Python", 71, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 13, 87
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/webeye/browser_factory.py", "Python", 225, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 36, 262
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/webeye/browser_manager.py", "Python", 142, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 26, 174
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/webeye/scraper/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/webeye/scraper/domUtils.js", "JavaScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 983, 0, 0, 0, 0, 0, 0, 109, 111, 1203
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/webeye/scraper/scraper.py", "Python", 345, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 35, 68, 448
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/skyvern/webeye/string_util.py", "Python", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 6
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/streamlit_app/visualizer/__init__.py", "Python", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/streamlit_app/visualizer/api.py", "Python", 79, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 99
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/streamlit_app/visualizer/artifact_loader.py", "Python", 54, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 13, 70
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/streamlit_app/visualizer/repository.py", "Python", 22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 31
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/streamlit_app/visualizer/sample_data.py", "Python", 217, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 229
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/streamlit_app/visualizer/streamlit.py", "Python", 393, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 52, 464
+"/home/bond/Desktop/darkpatterncombined/agents/skyvern/streamlit_app/visualizer/styles.py", "Python", 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 39
+"Total", "-", 10627, 535, 237, 114, 22, 24, 306, 764, 155, 6976, 150, 1131, 6749, 26, 13, 860, 3463, 157, 780, 3758, 36847
