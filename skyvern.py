@@ -4,6 +4,7 @@ import requests
 import json
 from dotenv import load_dotenv
 import sqlite3
+from sys import argv
 
 # Set your OpenAI API key
 load_dotenv()
@@ -99,20 +100,14 @@ def send_request(payload):
 
 # Main function to process all prompt files
 def main():
-    for prompt_file in os.listdir(prompts_dir):
-        if prompt_file.endswith('_prompts.txt'):
-            try:
-                site, tasks = read_prompt_file(os.path.join(prompts_dir, prompt_file))
-                for task in tasks:
-                    task_json = get_task_details(task)
-                    navigation_goal = task_json.get('navigation_goal')
-                    data_extraction_goal = task_json.get('data_extraction_goal')
-                    navigation_payload = task_json.get('navigation_payload')
-                    payload = generate_payload(site, navigation_goal, data_extraction_goal, navigation_payload)
-                    print(payload)
-                    send_request(payload)
-            except Exception as e: # TODO Handle specific exceptions
-                print(f"Error processing task '{task}' on {site}: {e}")
+    site, task = argv[1], argv[2]
+    task_json = get_task_details(task)
+    navigation_goal = task_json.get('navigation_goal')
+    data_extraction_goal = task_json.get('data_extraction_goal')
+    navigation_payload = task_json.get('navigation_payload')
+    payload = generate_payload(site, navigation_goal, data_extraction_goal, navigation_payload)
+    print(payload)
+    send_request(payload)
 
 if __name__ == '__main__':
     main()
