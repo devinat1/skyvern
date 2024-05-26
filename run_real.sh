@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Set up webhook
+python3 webhook_server.py
+
 # Define the directory containing the text files
 agent_prompts_directory="../../prompt-creator/prompts-text"
 
@@ -16,7 +19,7 @@ for filename in "$agent_prompts_directory"/*.txt; do
         fi
 
         # Call the ground truth (with adblocker)
-        python skyvern.py "$site" "$line" "true"
+        python3 skyvern.py "$site" "$line" "true"
         sleep 200 # TODO Find a better way so that you avoid waiting a guaranteed 200 seconds each time
 
         # Run with dark patterns

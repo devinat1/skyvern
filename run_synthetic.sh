@@ -1,7 +1,16 @@
 #!/bin/bash
 
+# Ensure killing of all processes of port 8001, 5000, and 6379 prior to rerunning
+kill -9 $(lsof -t -i:8001)
+kill -9 $(lsof -t -i:5000)
+kill -9 $(lsof -t -i:6379)
+
 # Define the directory containing the HTML files
 webpages_directory="../../data/synthetic/goclone-generated"
+
+# Set up webhook
+python3 webhook_server.py &  # Run the webhook server in the background
+webhook_pid=$!
 
 # Loop through all directories in the webpages directory
 for dir in "$webpages_directory"/*/; do
@@ -45,11 +54,12 @@ for dir in "$webpages_directory"/*/; do
 
                 for task in "${tasks[@]}"; do
                     # Call the ground truth (with adblocker)
-                    python "$original_dir/skyvern.py" "$localhost_url" "$task" "true"
+                    python3 "$original_dir/skyvern.py" "$localhost_url" "$task" "true"
 
-                    sleep 1000 # FIXME Need a way to programatically check for the server running
+                    # No need to wait here, as skyvern.py will handle waiting for the callback
+
                     # Run with dark patterns
-                    # python skyvern.py "$localhost_url" "$task" "false"
+                    # python3 skyvern.py "$localhost_url" "$task" "false"
                 done
 
                 # Kill the HTTP server
@@ -65,3 +75,6 @@ for dir in "$webpages_directory"/*/; do
         fi
     fi
 done
+
+# Kill the webhook server
+kill $webhook_pid

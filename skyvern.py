@@ -2,14 +2,14 @@ import os
 import openai
 import requests
 import json
+import time
 from dotenv import load_dotenv
 from sys import argv
+import uuid
 
 # Set your OpenAI API key
 load_dotenv()
 openai_api_key = os.getenv('OPENAI_API_KEY')
-
-# TODO Make the runner follow OOP principles like with multion.py
 
 # Function to read prompt file and extract site and tasks
 def read_prompt_file(file_path):
@@ -20,17 +20,18 @@ def read_prompt_file(file_path):
     return site, tasks
 
 # Function to generate the API request payload
-def generate_payload(site, navigation_goal, data_extraction_goal, navigation_payload):
+def generate_payload(site, navigation_goal, data_extraction_goal, navigation_payload, task_id):
     payload = {
         "title": "null",
         "url": f"{site}",
-        "webhook_callback_url": "",
+        "webhook_callback_url": "http://127.0.0.1:5000/webhook",
         "navigation_goal": navigation_goal,
-        "data_extraction_goal": data_extraction_goal,   
+        "data_extraction_goal": data_extraction_goal,
         "navigation_payload": navigation_payload,
         "error_code_mapping": {},
         "proxy_location": "NONE",
-        "extracted_information_schema": "null"
+        "extracted_information_schema": "null",
+        "task_id": task_id  # Include the task_id in the payload
     }
 
     return payload
@@ -86,13 +87,24 @@ def get_task_details(task):
 
 # Function to send the request and get response
 def send_request(payload):
-    # TODO Don't hardcode the API key
     headers = {
         'Content-Type': 'application/json',
         'x-api-key': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjQ4NjEwMzA4ODcsInN1YiI6Im9fMjU5MzYzMTQxMjQ3Mjg3ODY0In0.n_FOWV3UCP1IpJA6A1L38Gk0k7KoaZHinjZuUIRD3Yo'
     }
     response = requests.post('http://127.0.0.1:8000/api/v1/tasks', json=payload, headers=headers)
     return response.json()
+
+# Function to wait for the callback
+def wait_for_callback(task_id, timeout=300, check_interval=5):
+    start_time = time.time()
+    while time.time() - start_time < timeout:
+        if os.path.exists(f'/tmp/{task_id}.txt'):
+            print(f"Callback received for task_id {task_id}")
+            os.remove(f'/tmp/{task_id}.txt')
+            return True
+        time.sleep(check_interval)
+    print(f"Timeout waiting for callback for task_id {task_id}")
+    return False
 
 # Main function to process all prompt files
 def main():
@@ -101,9 +113,11 @@ def main():
     navigation_goal = task_json.get('navigation_goal')
     data_extraction_goal = task_json.get('data_extraction_goal')
     navigation_payload = task_json.get('navigation_payload')
-    payload = generate_payload(site, navigation_goal, data_extraction_goal, navigation_payload)
+    task_id = str(uuid.uuid4())  # Generate a unique task ID
+    payload = generate_payload(site, navigation_goal, data_extraction_goal, navigation_payload, task_id)
     print(payload)
     send_request(payload)
+    wait_for_callback(task_id)  # Wait for the callback before proceeding
 
 if __name__ == '__main__':
     main()
