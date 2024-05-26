@@ -37,12 +37,14 @@ class LLMAPIHandlerFactory:
             redis_port=llm_config.redis_port,
             redis_password=llm_config.redis_password,
             routing_strategy=llm_config.routing_strategy,
-            fallbacks=[{llm_config.main_model_group: llm_config.fallback_model_group}]
-            if llm_config.fallback_model_group
-            else [],
+            fallbacks=(
+                [{llm_config.main_model_group: llm_config.fallback_model_group}]
+                if llm_config.fallback_model_group
+                else []
+            ),
             num_retries=llm_config.num_retries,
             retry_after=llm_config.retry_delay_seconds,
-            set_verbose=False if SettingsManager.get_settings().is_cloud_environment() else llm_config.set_verbose,
+            set_verbose=(False if SettingsManager.get_settings().is_cloud_environment() else llm_config.set_verbose),
             enable_pre_call_checks=True,
         )
         main_model_group = llm_config.main_model_group
@@ -99,7 +101,11 @@ class LLMAPIHandlerFactory:
             except openai.OpenAIError as e:
                 raise LLMProviderError(llm_key) from e
             except Exception as e:
-                LOG.exception("LLM request failed unexpectedly", llm_key=llm_key, model=main_model_group)
+                LOG.exception(
+                    "LLM request failed unexpectedly",
+                    llm_key=llm_key,
+                    model=main_model_group,
+                )
                 raise LLMProviderError(llm_key) from e
 
             if step:
@@ -127,7 +133,7 @@ class LLMAPIHandlerFactory:
         return llm_api_handler_with_router_and_fallback
 
     @staticmethod
-    def get_llm_api_handler(llm_key: str) -> LLMAPIHandler:
+    def get_llm_api_handler(llm_key: str, base_parameters: dict[str, Any] | None = None) -> LLMAPIHandler:
         llm_config = LLMConfigRegistry.get_config(llm_key)
 
         if LLMConfigRegistry.is_router_config(llm_key):
@@ -139,8 +145,11 @@ class LLMAPIHandlerFactory:
             screenshots: list[bytes] | None = None,
             parameters: dict[str, Any] | None = None,
         ) -> dict[str, Any]:
+            active_parameters = base_parameters or {}
             if parameters is None:
                 parameters = LLMAPIHandlerFactory.get_api_parameters()
+
+            active_parameters.update(parameters)
 
             if step:
                 await app.ARTIFACT_MANAGER.create_artifact(
@@ -168,6 +177,7 @@ class LLMAPIHandlerFactory:
                         {
                             "model": llm_config.model_name,
                             "messages": messages,
+                            # we're not using active_parameters here because it may contain sensitive information
                             **parameters,
                         }
                     ).encode("utf-8"),
@@ -176,11 +186,14 @@ class LLMAPIHandlerFactory:
                 # TODO (kerem): add a timeout to this call
                 # TODO (kerem): add a retry mechanism to this call (acompletion_with_retries)
                 # TODO (kerem): use litellm fallbacks? https://litellm.vercel.app/docs/tutorials/fallbacks#how-does-completion_with_fallbacks-work
+                LOG.info("Calling LLM API", llm_key=llm_key, model=llm_config.model_name)
                 response = await litellm.acompletion(
                     model=llm_config.model_name,
                     messages=messages,
-                    **parameters,
+                    timeout=SettingsManager.get_settings().LLM_CONFIG_TIMEOUT,
+                    **active_parameters,
                 )
+                LOG.info("LLM API call successful", llm_key=llm_key, model=llm_config.model_name)
             except openai.OpenAIError as e:
                 raise LLMProviderError(llm_key) from e
             except Exception as e:

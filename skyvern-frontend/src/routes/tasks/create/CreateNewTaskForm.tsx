@@ -23,7 +23,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { getClient } from "@/api/AxiosClient";
 import { useToast } from "@/components/ui/use-toast";
-import { InfoCircledIcon } from "@radix-ui/react-icons";
+import { InfoCircledIcon, ReloadIcon } from "@radix-ui/react-icons";
 import {
   Tooltip,
   TooltipContent,
@@ -37,16 +37,34 @@ import { apiBaseUrl } from "@/util/env";
 import { useCredentialGetter } from "@/hooks/useCredentialGetter";
 import { useApiCredential } from "@/hooks/useApiCredential";
 
-const createNewTaskFormSchema = z.object({
-  url: z.string().url({
-    message: "Invalid URL",
-  }),
-  webhookCallbackUrl: z.string().optional(), // url maybe, but shouldn't be validated as one
-  navigationGoal: z.string().optional(),
-  dataExtractionGoal: z.string().optional(),
-  navigationPayload: z.string().optional(),
-  extractedInformationSchema: z.string().optional(),
-});
+const createNewTaskFormSchema = z
+  .object({
+    url: z.string().url({
+      message: "Invalid URL",
+    }),
+    webhookCallbackUrl: z.string().or(z.null()).optional(), // url maybe, but shouldn't be validated as one
+    navigationGoal: z.string().or(z.null()).optional(),
+    dataExtractionGoal: z.string().or(z.null()).optional(),
+    navigationPayload: z.string().or(z.null()).optional(),
+    extractedInformationSchema: z.string().or(z.null()).optional(),
+  })
+  .superRefine(({ navigationGoal, dataExtractionGoal }, ctx) => {
+    if (!navigationGoal && !dataExtractionGoal) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message:
+          "At least one of navigation goal or data extraction goal must be provided",
+        path: ["navigationGoal"],
+      });
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message:
+          "At least one of navigation goal or data extraction goal must be provided",
+        path: ["dataExtractionGoal"],
+      });
+      return z.NEVER;
+    }
+  });
 
 export type CreateNewTaskFormValues = z.infer<typeof createNewTaskFormSchema>;
 
@@ -54,16 +72,22 @@ type Props = {
   initialValues: CreateNewTaskFormValues;
 };
 
+function transform(value: unknown) {
+  return value === "" ? null : value;
+}
+
 function createTaskRequestObject(formValues: CreateNewTaskFormValues) {
   return {
     url: formValues.url,
-    webhook_callback_url: formValues.webhookCallbackUrl ?? "",
-    navigation_goal: formValues.navigationGoal ?? "",
-    data_extraction_goal: formValues.dataExtractionGoal ?? "",
+    webhook_callback_url: transform(formValues.webhookCallbackUrl),
+    navigation_goal: transform(formValues.navigationGoal),
+    data_extraction_goal: transform(formValues.dataExtractionGoal),
     proxy_location: "NONE",
     error_code_mapping: null,
-    navigation_payload: formValues.navigationPayload ?? "",
-    extracted_information_schema: formValues.extractedInformationSchema ?? "",
+    navigation_payload: transform(formValues.navigationPayload),
+    extracted_information_schema: transform(
+      formValues.extractedInformationSchema,
+    ),
   };
 }
 
@@ -90,7 +114,7 @@ function CreateNewTaskForm({ initialValues }: Props) {
     onError: (error) => {
       toast({
         variant: "destructive",
-        title: "Error",
+        title: "There was an error creating the task.",
         description: error.message,
       });
     },
@@ -126,7 +150,7 @@ function CreateNewTaskForm({ initialValues }: Props) {
             <FormItem>
               <FormLabel>
                 <div className="flex gap-2">
-                  URL*
+                  URL *
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger asChild>
@@ -167,7 +191,11 @@ function CreateNewTaskForm({ initialValues }: Props) {
                 </div>
               </FormLabel>
               <FormControl>
-                <Input placeholder="example.com" {...field} />
+                <Input
+                  placeholder="example.com"
+                  {...field}
+                  value={field.value === null ? "" : field.value}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -194,7 +222,12 @@ function CreateNewTaskForm({ initialValues }: Props) {
                 </div>
               </FormLabel>
               <FormControl>
-                <Textarea rows={5} placeholder="Navigation Goal" {...field} />
+                <Textarea
+                  rows={5}
+                  placeholder="Navigation Goal"
+                  {...field}
+                  value={field.value === null ? "" : field.value}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -225,6 +258,7 @@ function CreateNewTaskForm({ initialValues }: Props) {
                   rows={5}
                   placeholder="Data Extraction Goal"
                   {...field}
+                  value={field.value === null ? "" : field.value}
                 />
               </FormControl>
               <FormMessage />
@@ -256,6 +290,7 @@ function CreateNewTaskForm({ initialValues }: Props) {
                   rows={5}
                   placeholder="Navigation Payload"
                   {...field}
+                  value={field.value === null ? "" : field.value}
                 />
               </FormControl>
               <FormMessage />
@@ -287,6 +322,7 @@ function CreateNewTaskForm({ initialValues }: Props) {
                   placeholder="Extracted Information Schema"
                   rows={5}
                   {...field}
+                  value={field.value === null ? "" : field.value}
                 />
               </FormControl>
               <FormMessage />
@@ -296,7 +332,7 @@ function CreateNewTaskForm({ initialValues }: Props) {
         <div className="flex justify-end gap-3">
           <Button
             type="button"
-            variant="outline"
+            variant="secondary"
             onClick={async () => {
               const curl = fetchToCurl({
                 method: "POST",
@@ -316,7 +352,12 @@ function CreateNewTaskForm({ initialValues }: Props) {
           >
             Copy cURL
           </Button>
-          <Button type="submit">Create</Button>
+          <Button type="submit" disabled={mutation.isPending}>
+            {mutation.isPending && (
+              <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
+            )}
+            Create
+          </Button>
         </div>
       </form>
     </Form>

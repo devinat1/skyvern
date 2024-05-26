@@ -57,7 +57,7 @@ finditparts_sample_data = SampleTaskRequest(
 geico_sample_data = SampleTaskRequest(
     name="Geico",
     url="https://www.geico.com",
-    navigation_goal="Navigate through the website until you generate an auto insurance quote. Do not generate a home insurance quote. If this page contains an auto insurance quote, consider the goal achieved",
+    navigation_goal="Navigate through the website until you generate an auto insurance quote. Do not generate a home insurance quote. If you're on a page showing an auto insurance quote (with premium amounts), your goal is COMPLETE.",
     data_extraction_goal="Extract all quote information in JSON format including the premium amount, the timeframe for the quote.",
     navigation_payload={
         "licensed_at_age": 19,
@@ -199,9 +199,18 @@ geico_sample_data = SampleTaskRequest(
                                         "additionalProperties": False,
                                         "description": "The vehicle that the collision and comprehensive coverage is for",
                                         "properties": {
-                                            "make": {"description": "The make of the vehicle", "type": "string"},
-                                            "model": {"description": "The model of the vehicle", "type": "string"},
-                                            "year": {"description": "The year of the vehicle", "type": "string"},
+                                            "make": {
+                                                "description": "The make of the vehicle",
+                                                "type": "string",
+                                            },
+                                            "model": {
+                                                "description": "The model of the vehicle",
+                                                "type": "string",
+                                            },
+                                            "year": {
+                                                "description": "The year of the vehicle",
+                                                "type": "string",
+                                            },
                                         },
                                         "type": "object",
                                     },
@@ -225,4 +234,9 @@ geico_sample_data = SampleTaskRequest(
 )
 
 
-supported_examples = [geico_sample_data, finditparts_sample_data, california_edd_sample_data, bci_seguros_sample_data]
+supported_examples = [
+    geico_sample_data,
+    finditparts_sample_data,
+    california_edd_sample_data,
+    bci_seguros_sample_data,
+]
