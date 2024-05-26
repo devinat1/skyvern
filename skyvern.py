@@ -3,15 +3,11 @@ import openai
 import requests
 import json
 from dotenv import load_dotenv
-import sqlite3
 from sys import argv
 
 # Set your OpenAI API key
 load_dotenv()
 openai_api_key = os.getenv('OPENAI_API_KEY')
-
-# Directory containing the prompt files
-prompts_dir = '../../prompt-creator/prompts-text'
 
 # TODO Make the runner follow OOP principles like with multion.py
 
@@ -27,7 +23,7 @@ def read_prompt_file(file_path):
 def generate_payload(site, navigation_goal, data_extraction_goal, navigation_payload):
     payload = {
         "title": "null",
-        "url": f"https://www.{site}",
+        "url": f"{site}",
         "webhook_callback_url": "",
         "navigation_goal": navigation_goal,
         "data_extraction_goal": data_extraction_goal,   
