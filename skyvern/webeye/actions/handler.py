@@ -34,8 +34,10 @@ from skyvern.webeye.browser_factory import BrowserState
 from skyvern.webeye.scraper.scraper import ScrapedPage
 import sqlite3
 import os
-import urllib.parse
 import tldextract
+import os
+import sqlite3
+from urllib.parse import urlparse
 
 LOG = structlog.get_logger()
 TEXT_INPUT_DELAY = 10  # 10ms between each character input
@@ -652,22 +654,34 @@ async def validate_actions_in_dom(action: WebAction, page: Page, scraped_page: S
     else:
         LOG.info("Validated action xpath in DOM", action=action)
 
+    # Assuming extract_domain function is defined elsewhere
+    def extract_domain(url):
+        parsed_url = urlparse(url)
+        domain = parsed_url.netloc
+        if domain.startswith("www."):
+            domain = domain[4:]
+        return domain
+
     # By design, I am removing the www. and / from the name of the db
     domain = extract_domain(scraped_page.url)
-    db_file = f'db/{domain}.db'
+    db_file = f'db/real/{domain}.db'
+    if "localhost" in domain:  # Slow, but string matching may not work here due to potential for "localhost." instead of "localhost" and other variations
+        db_file = f'db/synthetic/{scraped_page.url.replace("/", "_")}.db'
+
+    print(db_file)
+
+    # Ensure the database directory exists
+    os.makedirs(os.path.dirname(db_file), exist_ok=True)
 
     # Create the database file if it doesn't exist
-    if not os.path.exists(db_file):
-        conn = sqlite3.connect(db_file)
-        cursor = conn.cursor()
-        cursor.execute("CREATE TABLE elements (xpath TEXT, class_name TEXT)")
-        conn.commit()
-
-    #FIXME This is assuming that you have run the runner.py file first
     conn = sqlite3.connect(db_file)
     cursor = conn.cursor()
+    cursor.execute("CREATE TABLE IF NOT EXISTS elements (xpath TEXT, class_name TEXT)")
+    conn.commit()
     cursor.execute("INSERT INTO elements (xpath, class_name) VALUES (?, ?)", (xpath, None))
     conn.commit()
+    conn.close()
+    
     return xpath
 
 

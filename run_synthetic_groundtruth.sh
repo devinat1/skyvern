@@ -53,13 +53,7 @@ for dir in "$webpages_directory"/*/; do
                 echo "URL: $localhost_url"
 
                 for task in "${tasks[@]}"; do
-                    # Call the ground truth (with adblocker)
                     python3 "$original_dir/skyvern.py" "$localhost_url" "$task" "true"
-
-                    # No need to wait here, as skyvern.py will handle waiting for the callback
-
-                    # Run with dark patterns
-                    # python3 skyvern.py "$localhost_url" "$task" "false"
                 done
 
                 # Kill the HTTP server

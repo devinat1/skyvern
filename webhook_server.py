@@ -1,16 +1,25 @@
 from flask import Flask, request, jsonify
 import os
+import redis
 
 app = Flask(__name__)
+
+# Initialize Redis connection
+redis_host = os.getenv('REDIS_HOST', 'localhost')
+redis_port = int(os.getenv('REDIS_PORT', 6379))
+redis_password = os.getenv('REDIS_PASSWORD', None)
+
+r = redis.StrictRedis(host=redis_host, port=redis_port, password=redis_password, decode_responses=True)
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
     data = request.json
-    task_id = data.get('task_id')
-    print(f"Received webhook data: {data}")
-    # Write to a file to indicate the callback was received
-    with open(f'/tmp/{task_id}.txt', 'w') as f:
-        f.write('callback received')
+    count = data.get('callback_count')
+    print('Webhook callback received')
+    
+    # Update the count in Redis
+    r.incr(f'callback_count:{count}')
+    
     return jsonify({'status': 'success'}), 200
 
 if __name__ == '__main__':

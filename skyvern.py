@@ -5,11 +5,18 @@ import json
 import time
 from dotenv import load_dotenv
 from sys import argv
-import uuid
+import redis
 
 # Set your OpenAI API key
 load_dotenv()
 openai_api_key = os.getenv('OPENAI_API_KEY')
+
+# Initialize Redis connection
+redis_host = os.getenv('REDIS_HOST', 'localhost')
+redis_port = int(os.getenv('REDIS_PORT', 6379))
+redis_password = os.getenv('REDIS_PASSWORD', None)
+
+r = redis.StrictRedis(host=redis_host, port=redis_port, password=redis_password, decode_responses=True)
 
 # Function to read prompt file and extract site and tasks
 def read_prompt_file(file_path):
@@ -20,7 +27,7 @@ def read_prompt_file(file_path):
     return site, tasks
 
 # Function to generate the API request payload
-def generate_payload(site, navigation_goal, data_extraction_goal, navigation_payload, task_id):
+def generate_payload(site, navigation_goal, data_extraction_goal, navigation_payload):
     payload = {
         "title": "null",
         "url": f"{site}",
@@ -30,8 +37,7 @@ def generate_payload(site, navigation_goal, data_extraction_goal, navigation_pay
         "navigation_payload": navigation_payload,
         "error_code_mapping": {},
         "proxy_location": "NONE",
-        "extracted_information_schema": "null",
-        "task_id": task_id  # Include the task_id in the payload
+        "extracted_information_schema": "null"
     }
 
     return payload
@@ -94,30 +100,37 @@ def send_request(payload):
     response = requests.post('http://127.0.0.1:8000/api/v1/tasks', json=payload, headers=headers)
     return response.json()
 
-# Function to wait for the callback
-def wait_for_callback(task_id, timeout=300, check_interval=5):
+# Function to wait for the callback and check the count
+def wait_for_callback_and_check_count(timeout=300, check_interval=5):
     start_time = time.time()
     while time.time() - start_time < timeout:
-        if os.path.exists(f'/tmp/{task_id}.txt'):
-            print(f"Callback received for task_id {task_id}")
-            os.remove(f'/tmp/{task_id}.txt')
-            return True
+        count = int(r.get('callback_count') or 0)
+        if count > initial_count:
+            print(f"Callback count updated: {count}")
+            return count
         time.sleep(check_interval)
-    print(f"Timeout waiting for callback for task_id {task_id}")
-    return False
+    print(f"Timeout waiting for callback count to update")
+    return initial_count
 
 # Main function to process all prompt files
 def main():
-    site, task = argv[1], argv[2]
+    site = argv[1] if "localhost" in argv[1] else f"https://{argv[1]}"
+    task = argv[2]
     task_json = get_task_details(task)
     navigation_goal = task_json.get('navigation_goal')
     data_extraction_goal = task_json.get('data_extraction_goal')
     navigation_payload = task_json.get('navigation_payload')
-    task_id = str(uuid.uuid4())  # Generate a unique task ID
-    payload = generate_payload(site, navigation_goal, data_extraction_goal, navigation_payload, task_id)
-    print(payload)
+    payload = generate_payload(site, navigation_goal, data_extraction_goal, navigation_payload)
+    
+    # Get the initial count before sending the request
+    global initial_count
+    initial_count = int(r.get('callback_count') or 0)
+    print(f"Initial callback count: {initial_count}")
+    
     send_request(payload)
-    wait_for_callback(task_id)  # Wait for the callback before proceeding
+    final_count = wait_for_callback_and_check_count()  # Wait for the callback and get the final count
+    
+    print(f"Final callback count: {final_count}")
 
 if __name__ == '__main__':
     main()
