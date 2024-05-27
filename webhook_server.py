@@ -14,9 +14,9 @@ r = redis.StrictRedis(host=redis_host, port=redis_port, password=redis_password,
 @app.route('/webhook', methods=['POST'])
 def webhook():
     data = request.json
-    count = data.get('callback_count')
     print('Webhook callback received')
-    
+    print('webook data:', data)
+
     # Update the count in Redis
     r.incr(f'callback_count:{1}')
     
