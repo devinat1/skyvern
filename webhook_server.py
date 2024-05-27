@@ -18,7 +18,7 @@ def webhook():
     print('Webhook callback received')
     
     # Update the count in Redis
-    r.incr(f'callback_count:{count}')
+    r.incr(f'callback_count:{1}')
     
     return jsonify({'status': 'success'}), 200
 
