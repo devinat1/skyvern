@@ -194,6 +194,7 @@ class LLMAPIHandlerFactory:
                     **active_parameters,
                 )
                 LOG.info("LLM API call successful", llm_key=llm_key, model=llm_config.model_name)
+                print("THE REPONSE IS: ", response)
             except openai.OpenAIError as e:
                 raise LLMProviderError(llm_key) from e
             except Exception as e:
