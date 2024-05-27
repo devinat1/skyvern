@@ -18,14 +18,6 @@ redis_password = os.getenv('REDIS_PASSWORD', None)
 
 r = redis.StrictRedis(host=redis_host, port=redis_port, password=redis_password, decode_responses=True)
 
-# Function to read prompt file and extract site and tasks
-def read_prompt_file(file_path):
-    with open(file_path, 'r') as file:
-        lines = file.readlines()
-        site = lines[0].strip()
-        tasks = [line.strip() for line in lines[1:] if line.strip()]
-    return site, tasks
-
 # Function to generate the API request payload
 def generate_payload(site, navigation_goal, data_extraction_goal, navigation_payload):
     payload = {
@@ -39,7 +31,6 @@ def generate_payload(site, navigation_goal, data_extraction_goal, navigation_pay
         "proxy_location": "NONE",
         "extracted_information_schema": "null"
     }
-
     return payload
 
 # Function to get task details from OpenAI
@@ -71,7 +62,8 @@ def get_task_details(task):
         json_response = json.loads(response.choices[0].message.content)
     except json.JSONDecodeError:
         print("Error: Invalid JSON response")
-        cleaned_response = openai.chat.completions.create(
+        # Attempt to clean the response using GPT-3.5-turbo
+        cleaned_response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
                 {
@@ -82,12 +74,10 @@ def get_task_details(task):
             ],
         )
         try:
-            cleaned_json_response = json.loads(cleaned_response.choices[0].message.content)
+            json_response = json.loads(cleaned_response.choices[0].message.content)
         except json.JSONDecodeError:
-            print("Error: Invalid JSON response")
+            print("Error: Invalid JSON response after cleaning")
             return {}
-        
-        return cleaned_json_response
     
     return json_response
 
@@ -112,15 +102,42 @@ def wait_for_callback_and_check_count(timeout=300, check_interval=5):
     print(f"Timeout waiting for callback count to update")
     return initial_count
 
+# Function to check if payload file already exists
+def check_payload_file_exists(site, task):
+    file_path = f"payloads/{site}_{task}.json"
+    return os.path.exists(file_path)
+
+# Function to save payload to a file
+def save_payload_to_file(site, task, payload):
+    os.makedirs('payloads', exist_ok=True)
+    file_path = f"payloads/{site}_{task}.json"
+    print(f"SAVING TO FILE: {file_path}")
+    with open(file_path, 'w') as file:
+        json.dump(payload, file, indent=4)
+
+# Function to sanitize names
+def sanitize_name(name):
+    return name.replace("https://", "").replace("http://", "").replace(":", "").replace("/", "_").replace(",", "").replace(" ", "").replace("?", "").replace("&", "").replace("=", "")
+
 # Main function to process all prompt files
 def main():
     site = argv[1] if "localhost" in argv[1] else f"https://{argv[1]}"
     task = argv[2]
+    
+    sanitized_site = sanitize_name(site)
+    sanitized_task = sanitize_name(task)
+
     task_json = get_task_details(task)
+    if not task_json:
+        print("Error: No valid task details obtained.")
+        return
+    
     navigation_goal = task_json.get('navigation_goal')
     data_extraction_goal = task_json.get('data_extraction_goal')
     navigation_payload = task_json.get('navigation_payload')
     payload = generate_payload(site, navigation_goal, data_extraction_goal, navigation_payload)
+    
+    save_payload_to_file(sanitized_site, sanitized_task, payload)
     
     # Get the initial count before sending the request
     global initial_count

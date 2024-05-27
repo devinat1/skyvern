@@ -1,0 +1,16 @@
+{
+    "title": "null",
+    "url": "https://amayama.com",
+    "webhook_callback_url": "http://127.0.0.1:5000/webhook",
+    "navigation_goal": "Navigate to the website's homepage.",
+    "data_extraction_goal": "Check if the website redirects to the user's preferred language based on the browser settings.",
+    "navigation_payload": {
+        "url": "http://example.com",
+        "headers": {
+            "Accept-Language": "en-US,en;q=0.9,fr;q=0.8"
+        }
+    },
+    "error_code_mapping": {},
+    "proxy_location": "NONE",
+    "extracted_information_schema": "null"
+}
