@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # Ensure killing of all processes of port 8001, 5000, and 6379 prior to rerunning
-kill -9 $(lsof -t -i:8001)
-kill -9 $(lsof -t -i:5000)
-kill -9 $(lsof -t -i:6379)
+kill $(lsof -t -i:8001)
+kill $(lsof -t -i:5000)
+kill $(lsof -t -i:6379)
 
 # Define the directory containing the HTML files
-webpages_directory="../../data/synthetic/goclone-generated"
+webpages_directory="../../data/synthetic/goclone-generated" # TODO Change this to ground truth when complete
 
 # Set up webhook
 python3 webhook_server.py &  # Run the webhook server in the background
