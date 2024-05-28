@@ -1,0 +1,14 @@
+{
+    "title": "null",
+    "url": "http://localhost:5001/",
+    "webhook_callback_url": "http://127.0.0.1:5000/webhook",
+    "navigation_goal": "Navigate to the website and ensure JavaScript and cookies are enabled",
+    "data_extraction_goal": "Extract the necessary data from the website after enabling JavaScript and cookies",
+    "navigation_payload": {
+        "enable_javascript": true,
+        "enable_cookies": true
+    },
+    "error_code_mapping": {},
+    "proxy_location": "NONE",
+    "extracted_information_schema": "null"
+}
