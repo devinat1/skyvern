@@ -1,9 +1,8 @@
 #!/bin/bash
 
 # Ensure killing of all processes of port 8001, 5000, and 6379 prior to rerunning
-kill $(lsof -t -i:8001)
-kill $(lsof -t -i:5000)
-kill $(lsof -t -i:6379)
+kill $(lsof -t -i:5000) # webhook server
+kill $(lsof -t -i:5001) # HTML server
 
 # Set up webhook
 python3 webhook_server.py &  # Run the webhook server in the background
