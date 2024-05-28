@@ -109,15 +109,17 @@ def check_payload_file_exists(site, task):
 
 # Function to save payload to a file
 def save_payload_to_file(site, task, payload):
-    os.makedirs('payloads', exist_ok=True)
-    file_path = f"payloads/{site}_{task}.json"
+    file_path = f"payloads/real/{site}_{task}.json"
+    if "localhost" in site:
+        file_path = f"payloads/synthetic/{site}_{task}.json"
+
     print(f"SAVING TO FILE: {file_path}")
     with open(file_path, 'w') as file:
         json.dump(payload, file, indent=4)
 
 # Function to sanitize names
 def sanitize_name(name):
-    return name.replace("https://", "").replace("http://", "").replace(":", "").replace("/", "_").replace(",", "").replace(" ", "").replace("?", "").replace("&", "").replace("=", "")
+    return name.replace("https://", "").replace("http://", "").replace(":", "").replace("/", "_").replace(",", "_").replace(" ", "_").replace("?", "").replace("&", "").replace("=", "")
 
 # Main function to process all prompt files
 def main():

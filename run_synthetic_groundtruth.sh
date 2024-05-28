@@ -1,16 +1,12 @@
 #!/bin/bash
 
-# Ensure killing of all processes of port 8001, 5000, and 6379 prior to rerunning
-kill $(lsof -t -i:8001)
-kill $(lsof -t -i:5000)
+# Ensure killing of all processes previously created
+kill $(lsof -t -i:5001)
 kill $(lsof -t -i:6379)
 
 # Define the directory containing the HTML files
 webpages_directory="../../data/synthetic/goclone-generated" # TODO Change this to ground truth when complete
-
-# Set up webhook
-python3 webhook_server.py &  # Run the webhook server in the background
-webhook_pid=$!
+agent_prompts_directory="../../prompt-creator/synthetic-prompts-text"
 
 # Loop through all directories in the webpages directory
 for dir in "$webpages_directory"/*/; do
@@ -23,40 +19,39 @@ for dir in "$webpages_directory"/*/; do
         original_dir=$(pwd)
 
         # Get tasks dynamically from the respective _prompts.txt file
-        tasks_file="$original_dir/../../prompt-creator/synthetic-prompts-text/${site}_prompts.txt"
-        echo $tasks_file
+        tasks_file="$agent_prompts_directory/${site}_prompts.txt"
         if [ -f "$tasks_file" ]; then
             mapfile -t tasks < "$tasks_file"
             if [ ${#tasks[@]} -gt 0 ]; then
-                # Change to the target directory
-                cd "$dir"
-
-                # Start a simple HTTP server in the background
-                python3 -m http.server 8001 &
+                # Start the Flask server in the background with the directory parameter
+                export FLASK_APP=html_server.py
+                export FLASK_ENV=development
+                python3 html_server.py "$dir" &
                 server_pid=$!
 
                 # Function to check if the server is up
                 check_server() {
-                    curl --silent --head http://localhost:8001/index.html > /dev/null
+                    curl --silent --head http://localhost:5001/ > /dev/null
                     return $?
                 }
 
                 # Wait for the server to be up
-                echo "Starting server for $site..."
+                echo "Starting Flask server for $site..."
                 until check_server; do
                     sleep 1
                 done
                 echo "Server is up and running for $site"
 
                 # Construct the localhost URL
-                localhost_url="localhost:8001/index.html"
+                localhost_url="http://localhost:5001/"
                 echo "URL: $localhost_url"
 
+                # Run tasks
                 for task in "${tasks[@]}"; do
                     python3 "$original_dir/skyvern.py" "$localhost_url" "$task" "true"
                 done
 
-                # Kill the HTTP server
+                # Kill the Flask server
                 kill $server_pid
 
                 # Change back to the original directory
@@ -69,6 +64,3 @@ for dir in "$webpages_directory"/*/; do
         fi
     fi
 done
-
-# Kill the webhook server
-kill $webhook_pid
