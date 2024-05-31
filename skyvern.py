@@ -119,12 +119,12 @@ def save_payload_to_file(site, task, payload):
 
 # Function to sanitize names
 def sanitize_name(name):
-    return name.replace("https://", "").replace("http://", "").replace(":", "").replace("/", "_").replace(",", "_").replace(" ", "_").replace("?", "").replace("&", "").replace("=", "")
+    return name.replace("http://localhost:5000", "").replace("https://", "").replace(":", "").replace("/", "_").replace(",", "_").replace(" ", "_").replace("?", "").replace("&", "").replace("=", "")
 
 # Main function to process all prompt files
 def main():
     site = argv[1] if "localhost" in argv[1] else f"https://{argv[1]}"
-    task = argv[2]
+    task = argv[2].rstrip('.').rstrip()
     
     sanitized_site = sanitize_name(site)
     sanitized_task = sanitize_name(task)

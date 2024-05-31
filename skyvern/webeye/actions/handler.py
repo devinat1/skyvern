@@ -666,7 +666,7 @@ async def validate_actions_in_dom(action: WebAction, page: Page, scraped_page: S
     domain = extract_domain(scraped_page.url)
     db_file = f'db/real/{domain}.db'
     if "localhost" in domain:  # Slow, but string matching may not work here due to potential for "localhost." instead of "localhost" and other variations
-        db_file = f'db/synthetic/{scraped_page.url.replace("/", "_")}.db'
+        db_file = 'db/synthetic/localhost.db'
 
     print(db_file)
 
@@ -678,6 +678,8 @@ async def validate_actions_in_dom(action: WebAction, page: Page, scraped_page: S
     # Create the database file if it doesn't exist
     conn = sqlite3.connect(db_file)
     cursor = conn.cursor()
+    
+    print("The URL is:", url)
     cursor.execute(f"CREATE TABLE IF NOT EXISTS {url} (xpath TEXT, element_id TEXT, reasoning TEXT)")
     conn.commit()
     cursor.execute(f"INSERT INTO {url} (xpath, element_id, reasoning) VALUES (?, ?, ?)", (xpath, action.element_id, action.reasoning))
