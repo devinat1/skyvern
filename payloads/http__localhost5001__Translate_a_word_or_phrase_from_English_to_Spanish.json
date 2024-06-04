@@ -1,0 +1,15 @@
+{
+    "title": "null",
+    "url": "http://localhost:5001/",
+    "webhook_callback_url": "http://127.0.0.1:5000/webhook",
+    "navigation_goal": "Translate a word or phrase from English to Spanish",
+    "data_extraction_goal": "Extract the translated word or phrase",
+    "navigation_payload": {
+        "source_language": "English",
+        "target_language": "Spanish",
+        "text_to_translate": "Your word or phrase here"
+    },
+    "error_code_mapping": {},
+    "proxy_location": "NONE",
+    "extracted_information_schema": "null"
+}
