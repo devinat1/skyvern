@@ -1,0 +1,14 @@
+{
+    "title": "null",
+    "url": "https://afremov.com",
+    "webhook_callback_url": "http://127.0.0.1:5000/webhook",
+    "navigation_goal": "Navigate to the newsletter sign-up page",
+    "data_extraction_goal": "Extract the form fields required for newsletter sign-up",
+    "navigation_payload": {
+        "url": "https://example.com/newsletter-signup",
+        "method": "GET"
+    },
+    "error_code_mapping": {},
+    "proxy_location": "NONE",
+    "extracted_information_schema": "null"
+}

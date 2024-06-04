@@ -85,7 +85,7 @@ def get_task_details(task):
 def send_request(payload):
     headers = {
         'Content-Type': 'application/json',
-        'x-api-key': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjQ4NjEwMzA4ODcsInN1YiI6Im9fMjU5MzYzMTQxMjQ3Mjg3ODY0In0.n_FOWV3UCP1IpJA6A1L38Gk0k7KoaZHinjZuUIRD3Yo'
+        'x-api-key': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjQ4NjIzMTk4MzcsInN1YiI6Im9fMjY0ODk5MTM5NTM5NDA2MjY4In0.fqC-bxMxxXLQ1oN7I6rVHaJtCWduFobxov738-VABzA'
     }
     response = requests.post('http://127.0.0.1:8000/api/v1/tasks', json=payload, headers=headers)
     return response.json()
@@ -109,7 +109,7 @@ def check_payload_file_exists(site, task):
 
 # Function to save payload to a file
 def save_payload_to_file(site, task, payload):
-    file_path = f"payloads/real/{site}_{task}.json"
+    file_path = f"payloads/{site}_{task}.json"
     if "localhost" in site:
         file_path = f"payloads/synthetic/{site}_{task}.json"
 
@@ -119,7 +119,7 @@ def save_payload_to_file(site, task, payload):
 
 # Function to sanitize names
 def sanitize_name(name):
-    return name.replace("http://localhost:5000", "").replace("https://", "").replace(":", "").replace("/", "_").replace(",", "_").replace(" ", "_").replace("?", "").replace("&", "").replace("=", "")
+    return name.replace("http://localhost:5000", "").replace("https://", "").replace(":", "").replace("/", "_").replace(",", "_").replace(" ", "_").replace("?", "").replace("&", "").replace("=", "_")
 
 # Main function to process all prompt files
 def main():
@@ -129,24 +129,31 @@ def main():
     sanitized_site = sanitize_name(site)
     sanitized_task = sanitize_name(task)
 
-    task_json = get_task_details(task)
-    if not task_json:
-        print("Error: No valid task details obtained.")
-        return
-    
-    navigation_goal = task_json.get('navigation_goal')
-    data_extraction_goal = task_json.get('data_extraction_goal')
-    navigation_payload = task_json.get('navigation_payload')
-    payload = generate_payload(site, navigation_goal, data_extraction_goal, navigation_payload)
-    
-    save_payload_to_file(sanitized_site, sanitized_task, payload)
-    
+    if check_payload_file_exists(sanitized_site, sanitized_task):
+        print(f"Payload file already exists for site: {sanitized_site}, task: {sanitized_task}")
+        with open(f"payloads/{sanitized_site}_{sanitized_task}.json", 'r') as file:
+            payload = json.load(file)
+    else:
+        task_json = get_task_details(task)
+        if not task_json:
+            print("Error: No valid task details obtained.")
+            return
+        
+        navigation_goal = task_json.get('navigation_goal')
+        data_extraction_goal = task_json.get('data_extraction_goal')
+        navigation_payload = task_json.get('navigation_payload')
+        payload = generate_payload(site, navigation_goal, data_extraction_goal, navigation_payload)
+        print(f"THE PAYLOAD IS: {payload}")
+        
+        save_payload_to_file(sanitized_site, sanitized_task, payload)
+
     # Get the initial count before sending the request
     global initial_count
     initial_count = int(r.get('callback_count') or 0)
     print(f"Initial callback count: {initial_count}")
     
-    send_request(payload)
+    res = send_request(payload)
+    print(f"The res is: {res}")
     final_count = wait_for_callback_and_check_count()  # Wait for the callback and get the final count
     
     print(f"Final callback count: {final_count}")

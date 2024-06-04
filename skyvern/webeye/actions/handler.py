@@ -673,7 +673,7 @@ async def validate_actions_in_dom(action: WebAction, page: Page, scraped_page: S
     # Ensure the database directory exists
     os.makedirs(os.path.dirname(db_file), exist_ok=True)
 
-    url = scraped_page.url.replace(":", "").replace("/", "_").replace(".", "_").replace("?", "_").replace("=", "_").replace("&", "_")
+    url = scraped_page.url.replace(":", "").replace("/", "_").replace(".", "_").replace("?", "_").replace("=", "_").replace("&", "_").replace("-", "_").replace("%", "_")
 
     # Create the database file if it doesn't exist
     conn = sqlite3.connect(db_file)

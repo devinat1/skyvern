@@ -1,11 +1,11 @@
 {
     "title": "null",
-    "url": "http://localhost:5001/",
+    "url": "https://afremov.com",
     "webhook_callback_url": "http://127.0.0.1:5000/webhook",
-    "navigation_goal": "Navigate to the latest news section of a reputable news website",
-    "data_extraction_goal": "Extract the headline, publication date, and a brief summary of the latest news story",
+    "navigation_goal": "Navigate to the Deal of the Day section on the website.",
+    "data_extraction_goal": "Extract the list of items, their prices, discounts, and any relevant details from the Deal of the Day section.",
     "navigation_payload": {
-        "url": "https://www.example-news-website.com/latest-news",
+        "url": "https://www.example.com/deal-of-the-day",
         "method": "GET",
         "headers": {
             "User-Agent": "Mozilla/5.0"

@@ -1,10 +1,10 @@
 {
     "title": "null",
-    "url": "https://afremov.com",
+    "url": "https://dailysale.com",
     "webhook_callback_url": "http://127.0.0.1:5000/webhook",
     "navigation_goal": "Navigate to the company's official website",
     "data_extraction_goal": "Extract the contact information including email, phone number, and physical address",
-    "navigation_payload": "URL of the company's official website",
+    "navigation_payload": "https://www.companywebsite.com",
     "error_code_mapping": {},
     "proxy_location": "NONE",
     "extracted_information_schema": "null"

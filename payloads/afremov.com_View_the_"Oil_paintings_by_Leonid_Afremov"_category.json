@@ -1,0 +1,14 @@
+{
+    "title": "null",
+    "url": "https://afremov.com",
+    "webhook_callback_url": "http://127.0.0.1:5000/webhook",
+    "navigation_goal": "Navigate to the 'Oil paintings by Leonid Afremov' category page on the specified website.",
+    "data_extraction_goal": "Extract the list of oil paintings by Leonid Afremov, including their titles, descriptions, and image URLs.",
+    "navigation_payload": {
+        "category": "Oil paintings by Leonid Afremov",
+        "website": "Specify the website URL here"
+    },
+    "error_code_mapping": {},
+    "proxy_location": "NONE",
+    "extracted_information_schema": "null"
+}
