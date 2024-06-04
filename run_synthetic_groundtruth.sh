@@ -6,7 +6,7 @@ kill $(lsof -t -i:5001) # HTML server
 kill $(lsof -t -i:6379) # Redis server
 
 # Define the directory containing the HTML files
-webpages_directory="../../data/synthetic/goclone-generated/data" # TODO Change this to ground truth when complete with gemini creation
+webpages_directory="../../data/synthetic/goclone-generated/sites/ground-truth"
 agent_prompts_directory="../../prompt-creator/synthetic-prompts-text"
 
 # Create an array of sites that have task files

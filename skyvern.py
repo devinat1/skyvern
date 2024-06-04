@@ -110,9 +110,6 @@ def check_payload_file_exists(site, task):
 # Function to save payload to a file
 def save_payload_to_file(site, task, payload):
     file_path = f"payloads/{site}_{task}.json"
-    if "localhost" in site:
-        file_path = f"payloads/synthetic/{site}_{task}.json"
-
     print(f"SAVING TO FILE: {file_path}")
     with open(file_path, 'w') as file:
         json.dump(payload, file, indent=4)
